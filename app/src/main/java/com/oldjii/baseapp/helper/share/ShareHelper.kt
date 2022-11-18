@@ -35,7 +35,6 @@ import java.util.*
 
 /**
  * 分享SDk帮助类
- *
  * 微信 SDK：https://developers.weixin.qq.com/doc/oplatform/Mobile_App/Share_and_Favorites/Android.html
  * 腾讯 SDK：https://wiki.connect.qq.com/分享功能存储权限适配
  * 微博 SDK：https://github.com/sinaweibosdk/weibo_android_sdk/blob/master/2019SDK/文档/微博Android%20SDK使用指南_v11.12.0.pdf
