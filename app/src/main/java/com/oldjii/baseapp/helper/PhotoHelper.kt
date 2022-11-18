@@ -1,4 +1,4 @@
-package com.oldjii.baseapp
+package com.oldjii.baseapp.media
 
 import android.app.Activity
 import android.content.ClipData

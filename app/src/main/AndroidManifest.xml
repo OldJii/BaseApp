@@ -21,10 +21,66 @@
         <category android:name="android.intent.category.LAUNCHER" />
       </intent-filter>
 
+      <!--外部唤起-->
+      <intent-filter>
+        <action android:name="android.intent.action.VIEW" />
+
+        <category android:name="android.intent.category.DEFAULT" />
+        <category android:name="android.intent.category.BROWSABLE" />
+
+        <!-- baseapp:// -->
+        <data android:scheme="baseapp" />
+      </intent-filter>
+
       <meta-data
         android:name="android.app.lib_name"
         android:value="" />
     </activity>
+
+    <!-- WeChat分享 -->
+    <activity
+      android:name=".helper.share.wxapi.WXEntryActivity"
+      android:configChanges="keyboardHidden|orientation|screenSize|screenLayout"
+      android:exported="true"
+      android:launchMode="singleTask"
+      android:taskAffinity="com.oldjii.baseapp"
+      android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+    <!-- QQ分享 -->
+    <provider
+      android:name="androidx.core.content.FileProvider"
+      android:authorities="com.oldjii.baseapp.provider"
+      android:exported="false"
+      android:grantUriPermissions="true"
+      tools:replace="android:authorities">
+      <meta-data
+        android:name="android.support.FILE_PROVIDER_PATHS"
+        android:resource="@xml/file_paths"
+        tools:replace="android:resource" />
+    </provider>
+
+    <activity
+      android:name="com.tencent.tauth.AuthActivity"
+      android:launchMode="singleTask"
+      android:noHistory="true"
+      android:exported="true">
+      <intent-filter>
+        <action android:name="android.intent.action.VIEW" />
+
+        <category android:name="android.intent.category.DEFAULT" />
+        <category android:name="android.intent.category.BROWSABLE" />
+
+        <!-- scheme="tencent+APP_ID_QQ" -->
+        <data android:scheme="tencentxxxxxxxxx" />
+      </intent-filter>
+    </activity>
+
+    <activity
+      android:name="com.tencent.connect.common.AssistActivity"
+      android:configChanges="orientation|keyboardHidden"
+      android:screenOrientation="behind"
+      android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
   </application>
 
 </manifest>
